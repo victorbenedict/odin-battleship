@@ -32,8 +32,8 @@ class Gameboard {
       {'name': 'carrier',     'size': 5},
       {'name': 'battleship',  'size': 4},  
       {'name': 'destroyer',   'size': 3},  
-      {'name': 'submarine',   'size': 2},  
-      {'name': 'patrolboat',  'size': 1},  
+      {'name': 'submarine',   'size': 3},  
+      {'name': 'patrolboat',  'size': 2},  
     ]
     const shipSize = shipSizes.find(ship => ship.name === shipName).size
     const positionArr = []
@@ -112,16 +112,51 @@ class Gameboard {
 }
 
 // Create Player
-const player1 = new Gameboard('player1')
-player1.placeship('carrier', [0,0], 'horizontal')
-player1.placeship('battleship', [0,1], 'horizontal')
-player1.placeship('destroyer', [0,2], 'horizontal')
-player1.placeship('submarine', [0,3], 'horizontal')
-player1.placeship('patrolboat', [0,4], 'horizontal')
+function createPlayer() {
 
-const computer = new Gameboard('computer')
-computer.placeship('carrier', [0,0], 'horizontal')
-computer.placeship('battleship', [0,1], 'horizontal')
-computer.placeship('destroyer', [0,2], 'horizontal')
-computer.placeship('submarine', [0,3], 'horizontal')
-computer.placeship('patrolboat', [0,4], 'horizontal')
+  const player1 = new Gameboard('player1')
+  player1.placeship('carrier', [0,0], 'horizontal')
+  player1.placeship('battleship', [0,1], 'horizontal')
+  player1.placeship('battleship', [0,2], 'horizontal')
+  player1.placeship('destroyer', [0,3], 'horizontal')
+  player1.placeship('submarine', [0,4], 'horizontal')
+  player1.placeship('patrolboat', [0,5], 'horizontal')
+  player1.placeship('patrolboat', [0,6], 'horizontal')
+  player1.placeship('patrolboat', [0,7], 'horizontal')
+  player1.placeship('patrolboat', [0,8], 'horizontal')
+  
+  const computer = new Gameboard('computer')
+  computer.placeship('carrier', [0,0], 'horizontal')
+  computer.placeship('battleship', [0,1], 'horizontal')
+  computer.placeship('battleship', [0,2], 'horizontal')
+  computer.placeship('destroyer', [0,3], 'horizontal')
+  computer.placeship('submarine', [0,4], 'horizontal')
+  computer.placeship('patrolboat', [0,5], 'horizontal')
+  computer.placeship('patrolboat', [0,6], 'horizontal')
+  computer.placeship('patrolboat', [0,7], 'horizontal')
+  computer.placeship('patrolboat', [0,8], 'horizontal')
+}
+
+// Players can take turns playing the game by attacking the enemy Gameboard.
+function playerTurn() {
+  let turn = 0
+  while (turn < 4) {
+    ++turn
+    cl(turn % 2 == 0 ? 'Computer turn' : 'Player turn')
+  }
+}
+
+// The game is played against the computer, so make the ‘computer’ capable of making random plays. The AI does not have to be smart, but it should know whether or not a given move is legal. (i.e. it shouldn’t shoot the same coordinate twice).
+const computerMoves_Arr = []
+for (let i = 0; i < 100; i++) {
+  if (i < 10) {
+    computerMoves_Arr.push(`0${i}`)
+  } else {
+    computerMoves_Arr.push(`${i}`)
+  }
+}
+cl(computerMoves_Arr)
+
+function computerPlays() {
+  
+}

@@ -1,5 +1,0 @@
-project-battleship@1.0.0 /home/benedict/Codebase/Projects/Project-Battleship
-├── css-loader@6.8.1
-├── file-loader@6.2.0
-└── style-loader@3.3.3
-

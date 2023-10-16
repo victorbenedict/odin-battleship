@@ -64,6 +64,8 @@ function renderboards() {
 
     div2.addEventListener('click', function() {
       // console.log(`Clicked ${coordinates}`)
+      if (player[2].board.hitGrid[y][x] == null) aiAttack()
+
       player[2].board.receiveAttack(x, y)
       if (renderHitCell2(x, y)) {
         div2.textContent = 'x'
@@ -73,7 +75,7 @@ function renderboards() {
         div2.textContent = 'x'
         div2.classList.add('miss')
       }
-      aiAttack()
+      
 
       
     })

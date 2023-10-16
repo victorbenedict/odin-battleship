@@ -30,8 +30,13 @@ let currentPlayer = 1
 currentPlayer = playerTurn()
 
 function playerTurn(){
-  console.log(`playerTurn ${currentPlayer}`)
   return currentPlayer == 1 ? 2 : 1
 }
 
-module.exports = { player, playerTurn};
+function gameEnd() {
+  if (player[1].board.isAllSunk()) return 1
+  if (player[2].board.isAllSunk()) return 2
+  return 0
+}
+
+module.exports = { player, playerTurn, gameEnd};

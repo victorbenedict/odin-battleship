@@ -1,4 +1,4 @@
-const { player} = require('./gameLoop');
+const { player, gameEnd} = require('./gameLoop');
 
 function renderOccupiedCell1(x, y) {
   return player[1].board.fleetGrid[y][x] !== null
@@ -31,9 +31,7 @@ function aiAttack() {
     attackState = player[1].board.receiveAttack(randomNumX, randomNumY)
     x = randomNumX
     y = randomNumY
-    console.log(x, y)
   }
-  console.log(x, y)
 
   const id = `p1_${y}${x}`
   const div = document.getElementById(id)
@@ -45,7 +43,10 @@ function aiAttack() {
   if (renderMissCell1(x, y)) {
     div.textContent = 'x'
     div.classList.add('miss')
-  }  
+  }
+  
+  
+  
 }
 const grid_1 = document.querySelector('.grid_1');
 const grid_2 = document.querySelector('.grid_2');
@@ -76,7 +77,23 @@ function renderboards() {
         div2.classList.add('miss')
       }
       
-
+      switch (gameEnd()  ) {
+        case 0:
+          console.log('0')
+          break;
+        case 1:
+          setTimeout(function() {
+            alert(`${player[2].name} wins!`);
+        }, 5);
+          break;
+        case 2:
+          setTimeout(function() {
+            alert(`${player[1].name} wins!`);
+        }, 5);
+          break;
+        default: console.log('gameEnd switch case error')
+          break;
+      }
       
     })
 

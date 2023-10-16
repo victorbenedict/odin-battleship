@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project: Battleship</title>
+  <script src="dist/bundle.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Test Driven Development</h1>
+  <h3>Game mode</h3>
+  <div id="gameOptions">
+    <section class="gameMode" style="display: none;">
+      <label>
+        <input type="radio" name="gameMode" value="vsAI"> Human vs AI
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="gameMode" value="vsHuman"> Human vs Human
+      </label>
+    </section>
+    <input type="text" name="player1_name" id="player1_name" placeholder="Player 1 name">
+    <input type="text" name="player2_name" id="player2_name" placeholder="Player 2 name">
+    <br>
+    <br>
+    <button>Start Game</button>
+  </div>
+  <br>
+  
+  <div id="gameboard">
+    <section id="board_player1">
+      <span>Player 1 board</span>
+      <div class="grid_1 grid-container"></div>
+    </section>
+    <br>
+
+    <section id="board_player2">
+      <span>Player 2 board</span>
+      <div class="grid_2 grid-container"></div>
+    </section>
+</div>
+  
+</body>
+</html>

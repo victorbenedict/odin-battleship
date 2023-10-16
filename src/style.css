@@ -1,0 +1,40 @@
+.grid-container {
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* Create 10 equal columns */
+  grid-template-rows: repeat(10, 1fr); /* Create 10 equal rows */
+  gap: 1px; /* Add some space between the divs (optional) */
+}
+
+.cell {
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  user-select: none; /* Disable text selection */
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.occupied {
+  background-color: #424242;
+}
+
+.hit {
+  color: #FF3333;
+}
+
+.miss {
+  color: #424242
+}
+

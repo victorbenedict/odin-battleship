@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "test": "jest",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "name": "project-battleship",
+  "description": "A battleship game. The final project of the JavaScript course in [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-battleship)",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "file-loader": "^6.2.0",
+    "style-loader": "^3.3.3",
+    "webpack-cli": "^5.1.4"
+  }
+}

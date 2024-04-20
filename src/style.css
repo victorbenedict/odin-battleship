@@ -1,40 +1,23 @@
-.grid-container {
-  width: 400px;
-  height: 400px;
-  display: grid;
-  grid-template-columns: repeat(10, 1fr); /* Create 10 equal columns */
-  grid-template-rows: repeat(10, 1fr); /* Create 10 equal rows */
-  gap: 1px; /* Add some space between the divs (optional) */
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  margin: auto;
+  background-color: lightgrey;
+  display: inline-grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+  border: 1px solid black;
 }
 
 .cell {
-  min-width: 0;
-  min-height: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #000;
-  font-size: 30px;
-  font-family: 'Courier New', Courier, monospace;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  user-select: none; /* Disable text selection */
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+  border: 1px solid black;
+  text-align: center;
+  padding-top: 15px;
 }
 
-.occupied {
-  background-color: #424242;
+.ship {
+  background-color: darkcyan;
 }
-
-.hit {
-  color: #FF3333;
-}
-
-.miss {
-  color: #424242
-}
-

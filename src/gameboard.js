@@ -1,79 +1,43 @@
-const { Ship} = require('./ship.js');
+import Ship from './ship';
 
-// note: The fleet and hit Grids index value is [Y axis][X axis]
-
-function Gameboard() {
-  this.ships = {}
-  this.fleetGrid = this.createGrid()
-  this.hitGrid = this.createGrid()
-}
-
-Gameboard.prototype.createGrid = function () {
-  const arr = []
-  for (let i = 0; i < 10; i++) {
-    arr[i] = Array(10).fill(null)
+export default class Gameboard {
+  constructor() {
+    this.ships = [];
+    this.missedShots = [];
   }
-  return arr
-}
 
-Gameboard.prototype.placeShip = function(shipName, shipClass, x, y, orientation) {
-  const _ship = this.ships[shipName] = new Ship(shipClass)
-  switch (orientation) {
-    case 'horizontal':
-      if (_ship.length + x > 10) {
-        delete this.ships[shipName];
-        return 'out of bounds'
-      }
-      for (let i = x; i < _ship.length + x ; i++) {
-        if (this.fleetGrid[y][i] !== null) {
-          delete this.ships[shipName];
-          return 'location is already taken'
-        }
-        this.fleetGrid[y][i] = shipName
-      }
-      return 'placement success'
+  placeShip(name, length, axis, x, y) {
+    const coordinates = [];
 
-    case 'vertical':
-      if (_ship.length + y > 10) {
-        delete this.ships[shipName];
-        return 'out of bounds'
-      } 
-      for (let i = y; i < _ship.length + y ; i++) {
-        if (this.fleetGrid[i][x] !== null) {
-          delete this.ships[shipName];
-          return 'location is already taken'
-        } 
-        this.fleetGrid[i][x] = shipName
-      }
-      return 'placement success'
-
-    default: return 'orientation error';
-  }
-}
-
-Gameboard.prototype.receiveAttack = function(x, y) {
-  const _cell = this.fleetGrid[y][x]
-  if (this.hitGrid[y][x] == 'miss' || this.hitGrid[y][x] == 'hit') {
-    return false
-  }
-  if (_cell !== null) {
-    this.ships[_cell].hit()
-    this.hitGrid[y][x] = 'hit'
-    return true
-  }
-  this.hitGrid[y][x] = 'miss'
-  return true
-};
-
-Gameboard.prototype.isAllSunk = function() {
-  for (let shipName in this.ships ) {
-    const _shipObj = this.ships[shipName]
-    if (_shipObj.isSunk() == false) {
-      return false
+    for (let count = 0; count < length; count++) {
+      const newX = axis === 'x' ? x + count : x;
+      const newY = axis === 'y' ? y + count : y;
+      coordinates.push({ x: newX, y: newY });
     }
+
+    const ship = new Ship(name, length);
+    this.ships.push({ ship: ship, coordinates: coordinates });
   }
-  return true
+
+  receiveAttack(x, y) {
+    for (const target of this.ships) {
+      for (const coordinate of target.coordinates) {
+        if (coordinate.x === x && coordinate.y === y) {
+          target.ship.hit();
+          return true;
+        }
+      }
+    }
+    this.missedShots.push({ x: x, y: y });
+    return false;
+  }
+
+  isShipsSunk() {
+    for (const status of this.ships) {
+      if (!status.ship.isSunk) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
-
-module.exports = { Gameboard};
-

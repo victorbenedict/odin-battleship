@@ -1,5 +1,7 @@
+import RenderBoard from './RenderBoard';
+import RenderShips from './RenderShips';
+
 import './style.css';
-const { renderboards } = require('./dom.js');
-renderboards()
 
-
+document.body.appendChild(RenderBoard());
+RenderShips();

@@ -1,26 +1,15 @@
-function Ship(shipClass){
-  this.shipClass = shipClass
-  this.length = this.setLength(shipClass)
-  this.timesHit = 0
-}
+export default class Ship {
+  constructor(name, length) {
+    this.name = name;
+    this.length = length;
+    this.hitCount = 0;
+    this.isSunk = false;
+  }
 
-Ship.prototype.setLength = function(shipClass) {
-  switch (shipClass) {
-    case 'Carrier': return 5
-    case 'Battleship': return 4
-    case 'Cruiser': return 3
-    case 'Destroyer': return 3
-    case 'Submarine': return 2
-    default: return 'shipClass error';
+  hit() {
+    this.hitCount += 1;
+    if (this.hitCount >= this.length) {
+      this.isSunk = true;
+    }
   }
 }
-
-Ship.prototype.hit = function() {
-  this.timesHit += 1
-}
-
-Ship.prototype.isSunk = function() {
-  return this.timesHit >= this.length 
-}
-
-module.exports = { Ship};

@@ -1,7 +1,7 @@
 # Battleship Game
 
-A simple battleship game made in JavaScript showcasing the use of [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) and TTD (Test Driven Development) using [Cypress](https://www.cypress.io/).
-[Live Preview](link)
+- A simple battleship game made in JavaScript showcasing the use of [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) and TTD (Test Driven Development) using [Cypress](https://www.cypress.io/).
+- [Live Preview](link)
 
 ### The Odin Project
 
@@ -17,6 +17,7 @@ A simple battleship game made in JavaScript showcasing the use of [Classes](http
 1. Clone the repository: `git clone <repository-url>`
 2. Navigate to the project directory and install dependencies: `npm install`
 3. Run the program: `npx webpack`
+4. Open the ```dist/index.html``` in your browser.
 
 ## Acknowledgments
 

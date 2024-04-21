@@ -24,20 +24,24 @@ export default class Gameboard {
       for (const coordinate of target.coordinates) {
         if (coordinate.x === x && coordinate.y === y) {
           target.ship.hit();
+
           return true;
         }
       }
     }
+
     this.missedShots.push({ x: x, y: y });
+
     return false;
   }
 
   isShipsSunk() {
     for (const status of this.ships) {
-      if (!status.ship.isSunk) {
+      if (!status.ship.isSunk()) {
         return false;
       }
     }
+
     return true;
   }
 }

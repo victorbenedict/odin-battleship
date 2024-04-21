@@ -1,0 +1,29 @@
+{
+  "ships": [
+    {
+      "class": "Carrier",
+      "code": "CV",
+      "length": 6
+    },
+    {
+      "class": "Battleship",
+      "code": "BB",
+      "length": 5
+    },
+    {
+      "class": "Cruiser",
+      "code": "CC",
+      "length": 4
+    },
+    {
+      "class": "Destroyer",
+      "code": "DD",
+      "length": 3
+    },
+    {
+      "class": "Submarine",
+      "code": "SS",
+      "length": 2
+    }
+  ]
+}

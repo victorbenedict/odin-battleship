@@ -1,7 +1,4 @@
-import RenderBoard from './RenderBoard';
-import RenderShips from './RenderShips';
-
+import StartPage from './pages/StartPage';
 import './style.css';
 
-document.body.appendChild(RenderBoard());
-RenderShips();
+StartPage();

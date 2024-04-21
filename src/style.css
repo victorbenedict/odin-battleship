@@ -1,10 +1,21 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+h1,
+h4,
+p {
+  margin: 0;
+}
+
+h1 {
+  padding: 16px;
 }
 
 .board {
-  margin: auto;
   background-color: lightgrey;
   display: inline-grid;
   grid-template-columns: repeat(10, 50px);
@@ -12,10 +23,28 @@ body {
   border: 1px solid black;
 }
 
+.boardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
 .cell {
   border: 1px solid black;
   text-align: center;
   padding-top: 15px;
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.cell:hover {
+  background-color: grey;
 }
 
 .ship {

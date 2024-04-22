@@ -3,6 +3,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 h1,
@@ -15,12 +19,9 @@ h1 {
   padding: 16px;
 }
 
-.board {
-  background-color: lightgrey;
-  display: inline-grid;
-  grid-template-columns: repeat(10, 50px);
-  grid-template-rows: repeat(10, 50px);
-  border: 1px solid black;
+.setupPanel {
+  display: flex;
+  gap: 16px;
 }
 
 .boardContainer {
@@ -32,21 +33,21 @@ h1 {
   padding: 16px;
 }
 
+.board {
+  display: inline-grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+  border: 1px solid black;
+}
+
 .cell {
   border: 1px solid black;
   text-align: center;
   padding-top: 15px;
+}
+
+.shipDiv img {
+  aspect-ratio: auto;
+  width: 300px;
   cursor: pointer;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-
-.cell:hover {
-  background-color: grey;
-}
-
-.ship {
-  background-color: darkcyan;
 }

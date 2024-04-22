@@ -8,8 +8,8 @@ const renderBoard = (name, cellClickFunction, rows = 10, cols = 10) => {
       const coordinate = `${x},${y}`;
       cell.classList.add('cell');
       cell.id = coordinate;
-      cell.textContent = coordinate;
-      cell.addEventListener('click', () => cellClickFunction(x, y));
+      cell.textContent = `${x} - ${y}`;
+      cell.addEventListener('click', () => cellClickFunction);
       board.appendChild(cell);
     }
   }

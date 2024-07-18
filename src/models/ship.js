@@ -1,3 +1,9 @@
+/**
+ * Ship class
+ * @param name
+ * @param length
+ * @constructor
+ */
 export default class Ship {
   constructor(name, length) {
     this.name = name;
@@ -6,7 +12,7 @@ export default class Ship {
   }
 
   hit() {
-    this.hitCount += 1;
+    this.hitCount++;
   }
 
   isSunk() {

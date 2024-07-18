@@ -33,7 +33,7 @@ h1 {
   padding: 16px;
 }
 
-.board {
+.gameboard {
   display: inline-grid;
   grid-template-columns: repeat(10, 50px);
   grid-template-rows: repeat(10, 50px);
@@ -46,8 +46,33 @@ h1 {
   padding-top: 15px;
 }
 
+.cell.ship {
+  background-color: cadetblue;
+}
+
+.cell.miss {
+  background-color: darkgray;
+}
+
+.cell.hit {
+  background-color: firebrick;
+}
+
+.cell.target:hover {
+  cursor: pointer;
+  background-color: tan;
+}
+
+.cell.target:active {
+  background-color: orangered;
+}
+
 .shipDiv img {
   aspect-ratio: auto;
   width: 300px;
   cursor: pointer;
+}
+
+.battlepage {
+  display: flex;
 }

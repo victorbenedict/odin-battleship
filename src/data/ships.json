@@ -1,0 +1,27 @@
+[
+  {
+    "name": "carrier",
+    "code": "cv",
+    "length": 6
+  },
+  {
+    "name": "battleship",
+    "code": "bb",
+    "length": 5
+  },
+  {
+    "name": "cruiser",
+    "code": "cc",
+    "length": 4
+  },
+  {
+    "name": "destroyer",
+    "code": "dd",
+    "length": 3
+  },
+  {
+    "name": "submarine",
+    "code": "ss",
+    "length": 2
+  }
+]

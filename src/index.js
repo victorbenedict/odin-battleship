@@ -1,4 +1,9 @@
-import StartPage from './pages/StartPage';
+import renderDeploymentPage from './pages/renderDeploymentPage';
 import './style.css';
 
-StartPage();
+const body = document.querySelector('body');
+const container = document.createElement('div');
+container.id = 'container';
+body.append(container);
+
+renderDeploymentPage('container');

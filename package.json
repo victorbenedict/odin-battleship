@@ -1,6 +1,6 @@
 {
   "name": "odin-battleship",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A simple battleship game",
   "private": true,
   "scripts": {
@@ -13,7 +13,6 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^7.1.1",
-    "cypress": "^13.8.0",
     "html-loader": "^5.0.0",
     "html-webpack-plugin": "^5.6.0",
     "style-loader": "^4.0.0",
